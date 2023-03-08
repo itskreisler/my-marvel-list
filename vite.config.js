@@ -1,11 +1,12 @@
-import { defineConfig, loadEnv } from 'vite'
+import { config } from 'dotenv'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 // https://vitejs.dev/config/
 
 export default ({ mode }) => {
   // Load app-level env vars to node-level env vars.
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
+  const { parsed } = config()
   const base = process.env.NODE_ENV === 'development' ? '/' : '/my-marvel-list/'
   return defineConfig({
     plugins: [react()],
@@ -28,9 +29,7 @@ export default ({ mode }) => {
       }
     },
     define: {
-      'process.env': {
-        ...process.env
-      }
+      'process.env': { ...process.env, ...parsed }
     }
   })
 }
