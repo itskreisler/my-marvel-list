@@ -3,7 +3,7 @@
 Un sitio web basado en perfiles para ver los comics y/o personajes de MARVEL y que permite crear una lista personalizada de los comics y/o personajes favoritos.
 
 
-![Logo](https://raw.githubusercontent.com/itskreisler/my-marvel-list/master/public/img/logo_landscape.png =50%)
+![Logo](https://raw.githubusercontent.com/itskreisler/my-marvel-list/master/public/img/logo_landscape_mini.png)
 
 
 ## Screenshots
