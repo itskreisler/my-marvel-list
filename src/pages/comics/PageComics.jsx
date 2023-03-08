@@ -8,7 +8,7 @@ const PageComics = () => {
   const [loading, setLoading] = React.useState(false)
   React.useEffect(() => {
     try {
-      setComics(stateMarvelComics.value?.data.results)
+      setComics(stateMarvelComics.value?.data.results || [])
     } catch (error) {
       toast(stateMarvelComics.error?.message, { type: 'error' })
     } finally {
@@ -19,7 +19,7 @@ const PageComics = () => {
 
       <ul>
         {loading && <li>Loading...</li>}
-        {comics?.map((comic, i) => (<li key={i}>{comic.title}</li>))}
+        {comics.map((comic, i) => (<li key={i}>{comic.title}</li>))}
       </ul>
   )
 }
