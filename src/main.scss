@@ -59,7 +59,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
-$cursores: "pointer", "not-allowed";
+$cursores: pointer, not-allowed;
 
 @each $cursor in $cursores {
   .cursor-#{$cursor} {
@@ -100,6 +100,23 @@ ol {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.card {
+  & > .card-img-blur {
+    filter: saturate(0);
+    opacity: 0.3;
+    transition: (filter,opacity) 0.3s ease-in-out;
+  }
+  &:hover {
+    & > .card-img-blur {
+      filter: saturate(1);
+      opacity: 1;
+    }
+    & > .card-img-overlay {
+      opacity: 0;
+    }
+  }
+}
+
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .card-mml {

@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext } from 'react'
+import { useProfiles } from './store/useProfiles'
 
-const AppContext = createContext({})
+const AppContext = createContext({ accounts: { profiles: [], saveProfile: () => {}, deleteProfile: () => {} } })
 
 export const TagAppContext = ({ children }) => {
-  const [favoriteComics, setFavoriteComics] = useState([])
-  const [profiles, setProfiles] = useState([])
+  const stateProfile = useProfiles()
   return (
     <AppContext.Provider
       value={{
-        favorites: { favoriteComics, setFavoriteComics },
-        accounts: { profiles, setProfiles }
+        accounts: stateProfile
       }}
     >
       {children}

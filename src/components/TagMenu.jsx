@@ -4,13 +4,18 @@ import { Container, Nav, Navbar, Breadcrumb, Card } from 'react-bootstrap'
 import TagListMenu from './TagListMenu'
 import { useUpdateTitle } from '../hooks/use-update-title'
 import { titleWebSite } from '../helpers/config'
+import { PATHS } from '../pages/Paths'
+import { useRouter } from '../hooks/use-router'
+
 const TagMenu = () => {
-  const [temp] = useUpdateTitle()
+  const [stateTitle] = useUpdateTitle()
+  const { push } = useRouter()
+  const handleClickHome = () => push(PATHS.URL_DEFAULT.path)
   return (
     <>
       <Navbar bg="" className='shadow-sm' expand="lg" collapseOnSelect={true}>
         <Container>
-          <Navbar.Brand href="#/">
+          <Navbar.Brand className='cursor-pointer' onClick={handleClickHome}>
             <img
               src='./img/icon.png'
               width="50"
@@ -39,7 +44,7 @@ const TagMenu = () => {
               <Breadcrumb.Item active>
                 <Link to='/'>{titleWebSite}</Link>
               </Breadcrumb.Item>
-              <Breadcrumb.Item active>{temp?.title}</Breadcrumb.Item>
+              <Breadcrumb.Item active>{stateTitle?.title}</Breadcrumb.Item>
             </Breadcrumb>
           </Card.Body>
         </Card>

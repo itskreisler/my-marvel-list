@@ -1,11 +1,15 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
-import TagSearchComics from '../../components/TagSearchComics'
+import { Col, Container, Row } from 'react-bootstrap'
+import AlertHome from '../../components/alerts/AlertHome'
 
 const index = () => {
   return (
     <Container>
-
+      <Row>
+        <Col>
+        <AlertHome />
+        </Col>
+      </Row>
     </Container>
   )
 }
