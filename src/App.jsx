@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes } from 'react-router-dom'
+import { HashRouter as Router, Routes } from 'react-router-dom'
 import { TagAppContext } from './context/AppContext'
 import appPages from './pages/Paths'
 import TagMenu from './components/TagMenu'
