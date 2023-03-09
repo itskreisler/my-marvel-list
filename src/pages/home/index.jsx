@@ -5,7 +5,7 @@ import TagSearchComics from '../../components/TagSearchComics'
 const index = () => {
   return (
     <Container>
-      <TagSearchComics/>
+
     </Container>
   )
 }
