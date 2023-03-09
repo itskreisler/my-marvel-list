@@ -7,7 +7,7 @@ import path from 'path'
 export default ({ mode }) => {
   // Load app-level env vars to node-level env vars.
   const { parsed } = config()
-  const base = process.env.NODE_ENV === 'development' ? '/' : '/my-marvel-list/'
+  const base = process.env.NODE_ENV === 'development' ? '/my-marvel-list/' : '/'
   return defineConfig({
     plugins: [react()],
     base,
