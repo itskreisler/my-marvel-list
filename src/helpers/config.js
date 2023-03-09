@@ -1,7 +1,7 @@
 import md5 from 'md5'
 
 /* The base url of the API. */
-const baseUrl = 'http://gateway.marvel.com/v1/public'
+const baseUrl = 'https://gateway.marvel.com/v1/public'
 
 /** ts - a timestamp (or other long string which can change on a request-by-request basis) */
 const ts = Number(new Date())
