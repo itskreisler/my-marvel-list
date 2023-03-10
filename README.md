@@ -7,15 +7,11 @@ Un sitio web basado en perfiles para ver los comics de MARVEL y que permite crea
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://raw.githubusercontent.com/itskreisler/my-marvel-list/master/public/img/my_marvel_list_example.png)
 
 ## Demo
 
-[my-marvel-list](https://itskreisler.github.io/my-marvel-list)
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
+[my-marvel-list](https://my-marvel-list.vercel.app/)
 
 ## Features
 
