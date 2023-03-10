@@ -1,25 +1,26 @@
-import React, { useState } from 'react'
-import { stateApiMarvel } from '../../services/marvel.api'
-import { toast } from 'react-toastify'
+import React from 'react'
 import TagCardComic from '../../components/TagCardComic'
-import { Container, Row, Col } from 'react-bootstrap'
-import { requestUrlMarvel } from '../../helpers/config'
+import { Container, Row, Col, Alert } from 'react-bootstrap'
 import PlaceholderCardComic from '../../components/placeholders/PlaceholderCardComic'
 import TagSearchComics from './../../components/TagSearchComics'
+import { useComicsStore } from './../../context/store/storeComics'
+import { shallow } from 'zustand/shallow'
 const PageComics = () => {
-  const [responde, loading, error] = stateApiMarvel(
-    requestUrlMarvel('/comics')
-  )
-  const [comics, setComics] = useState([])
-  React.useEffect(() => {
-    setComics(responde?.data.results || [])
-    if (typeof error?.message !== 'undefined') {
-      toast(error?.message, { type: 'error' })
-    }
-  }, [loading])
+  const { loading, comics } = useComicsStore((state) => ({
+    comics: state.comics,
+    query: state.query,
+    loading: state.loading,
+    error: state.error
+  }), shallow)
+
   return (
     <Container className="mt-lg-3">
       <TagSearchComics loading={loading} />
+      <Row>
+      <Col lg={8} className='mx-auto'>
+          {comics.length === 0 && !loading && (<Alert variant='purple'>Empieza por buscar un comics...</Alert>)}
+        </Col>
+      </Row>
       <Row>
         {loading &&
           Array.from({ length: 6 }).map((_, idx) => (
