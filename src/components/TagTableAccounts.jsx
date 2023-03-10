@@ -15,7 +15,7 @@ const TagTableAccounts = () => {
           <th>Nombre</th>
           <th>Identificacion</th>
           <th>Correo Electronico</th>
-          <th>?</th>
+          <th>Perfil</th>
         </tr>
       </thead>
       <tbody>
@@ -33,9 +33,6 @@ const TagTableAccounts = () => {
                   onClick={() => handleCLick(identificacion)}
                 >
                   {active ? 'Desactivar' : 'Activar'}
-                </Button>
-                <Button variant="outline-purple">
-                  Eliminar
                 </Button>
                 </ButtonGroup>
               </td>

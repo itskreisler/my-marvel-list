@@ -1,18 +1,16 @@
 import { useLocalStorage } from '../../hooks/use-local-storage'
 export const useFavoritos = () => {
   const [favoritos, setFavoritos] = useLocalStorage('marvel:favoritos', [])
-  const fnSaveFavorito = (perfil, favorito) => () => {
-    setFavoritos(state => {
-      const favoritos = []
-      favoritos.push(favorito)
-      return [...state, { perfil, favoritos }]
-    })
-  }
+
   /** funcion para guardar un favorito de un perfil y si ya esta removerlo */
   const saveFavorito = (perfil, favorito) => {
     // si no hay nada se crea la estructura base de los favoritos
     if (!favoritos.length) {
-      return fnSaveFavorito(perfil, favorito)
+      return setFavoritos(state => {
+        const favoritos = []
+        favoritos.push(favorito)
+        return [...state, { perfil, favoritos }]
+      })
     }
     // si no existe el perfil se crea
     const perfilExist = favoritos.find((fav) => fav.perfil === perfil)
