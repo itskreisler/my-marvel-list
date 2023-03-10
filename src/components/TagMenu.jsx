@@ -1,15 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Container, Nav, Navbar, Breadcrumb, Card } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import TagListMenu from './TagListMenu'
-import { useUpdateTitle } from '../hooks/use-update-title'
-import { titleWebSite } from '../helpers/config'
 import { PATHS } from '../pages/Paths'
 import { useRouter } from '../hooks/use-router'
 import { useAppContext } from '../context/AppContext'
+import TagBreadcrumbMenu from './TagBreadcrumbMenu'
 
 const TagMenu = () => {
-  const [stateTitle] = useUpdateTitle()
   const { push } = useRouter()
   const handleClickHome = () => push(PATHS.URL_DEFAULT.path)
   const { accounts: { getActiveProfile } } = useAppContext()
@@ -31,11 +28,6 @@ const TagMenu = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <TagListMenu />
-              {nombre && (
-                <Nav.Link href={'#' + PATHS.URL_FAVORITES.path}>
-                  <span className="h5 text-decoration-none">{PATHS.URL_FAVORITES.title}</span>
-                </Nav.Link>
-              )}
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
@@ -45,19 +37,7 @@ const TagMenu = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container className="d-lg-none">
-        <Card className='my-3 border-0 shadow-sm'>
-          <Card.Body>
-            <Breadcrumb className='m-0'>
-              <Breadcrumb.Item active>
-                <Link to='/'>{titleWebSite}</Link>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>{stateTitle?.title}</Breadcrumb.Item>
-            </Breadcrumb>
-          </Card.Body>
-        </Card>
-
-      </Container>
+      <TagBreadcrumbMenu />
     </>
   )
 }

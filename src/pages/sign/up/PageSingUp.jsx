@@ -14,10 +14,10 @@ const PageSingUp = () => {
   const onSubmit = (data) => {
     const ifSaved = saveProfile(data)
     if (ifSaved) {
-      toast('Perfil guardado')
+      toast('Perfil guardado, ve a la página de perfiles para activarlo.', { type: 'success' })
       formRegister.current.reset()
     } else {
-      toast('Error al guardar el perfil')
+      toast('Error al guardar el perfil, ya existe la identificación o el correo.', { type: 'error' })
     }
   }
   return (

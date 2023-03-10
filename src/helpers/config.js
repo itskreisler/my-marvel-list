@@ -1,7 +1,10 @@
 import md5 from 'md5'
 import quotesMarvel from '../assets/quotesmarvel.json'
+import marvelCharacters from '../assets/marvelCharacters.json'
+export const marvelCharactersList = marvelCharacters
 /* The base url of the API. */
-const baseUrl = 'https://gateway.marvel.com/v1/public'
+const isSecure = process.env.NODE_ENV === 'development' ? '' : 's'
+const baseUrl = `http${isSecure}://gateway.marvel.com/v1/public`
 
 /** ts - a timestamp (or other long string which can change on a request-by-request basis) */
 const ts = Number(new Date())

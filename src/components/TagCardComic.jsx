@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Card, Col, Row, Badge } from 'react-bootstrap'
-import TagButtonComic from './TagButtonComic'
+import TagButtonGroupComics from './TagButtonGroupComics'
 const TagCardComic = ({ title, thumbnail, format, prices, id }) => {
   const { price } = prices.find((price) => price.type === 'printPrice')
 
@@ -33,7 +33,7 @@ const TagCardComic = ({ title, thumbnail, format, prices, id }) => {
             Precio:{' '}
             <Badge bg={price > 0 ? 'purple' : 'success'}>{price > 0 ? price : 'free'}</Badge>
             <hr />
-              <TagButtonComic id={id}/>
+              <TagButtonGroupComics id={id}/>
           </Col>
         </Row>
       </Card.Body>

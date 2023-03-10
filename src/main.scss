@@ -100,7 +100,7 @@ ol {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.card {
+.card-mml-img-overlay {
   & > .card-img-blur {
     filter: saturate(0);
     opacity: 0.3;
@@ -112,7 +112,7 @@ ol {
       opacity: 1;
     }
     & > .card-img-overlay {
-      opacity: 0;
+      display: none;
     }
   }
 }

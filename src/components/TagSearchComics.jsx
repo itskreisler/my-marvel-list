@@ -2,44 +2,12 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap'
 import { useTypingEffect } from '../hooks/use-typing-effect'
-const marvelCharacters = [
-  'Iron Man',
-  'Spider-Man',
-  'Hulk',
-  'Thor',
-  'Captain America',
-  'Black Widow',
-  'Hawkeye',
-  'Doctor Strange',
-  'Wolverine',
-  'Deadpool',
-  'Black Panther',
-  'Ant-Man',
-  'Vision',
-  'Scarlet Witch',
-  'Quicksilver',
-  'Groot',
-  'Rocket Raccoon',
-  'Gamora',
-  'Star-Lord',
-  'Drax',
-  'Thanos',
-  'Loki',
-  'Nick Fury',
-  'Winter Soldier',
-  'Falcon',
-  'War Machine',
-  'Daredevil',
-  'Jessica Jones',
-  'Luke Cage',
-  'Iron Fist',
-  'Punisher'
-]
+import { marvelCharactersList } from '../helpers/config'
 
 const TagSearchComics = () => {
   const { register, handleSubmit } = useForm()
   const onSubmit = (data) => console.log(data)
-  const [text] = useTypingEffect(marvelCharacters)
+  const [text] = useTypingEffect(marvelCharactersList)
   return (
       <Row className='justify-content-center'>
         <Col lg={8}>

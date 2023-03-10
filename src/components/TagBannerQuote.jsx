@@ -4,7 +4,7 @@ import { randomQuoteMarvel } from '../helpers/config'
 const TagBannerQuote = () => {
   const { frase, autor } = randomQuoteMarvel()
   return (
-    <Card className="bg-dark text-white">
+    <Card className="bg-dark text-white card-mml-img-overlay">
       <Card.Img
         src="./img/logo.png"
         className="card-img-blur"

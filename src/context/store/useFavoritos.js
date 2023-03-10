@@ -31,9 +31,13 @@ export const useFavoritos = () => {
     })
     setFavoritos(newFavoritos)
   }
-  const checkFavorite = (perfil, favorito) => {
+  const checkFavorite = (perfil, favorito = null) => {
+    if (!favorito) {
+      const fav = favoritos.find((fav) => fav.perfil === perfil)
+      return [!!fav, fav]
+    }
     const fav = favoritos.find((fav) => fav.perfil === perfil && fav.favoritos.includes(favorito))
-    return !!fav
+    return [!!fav, fav]
   }
   return { favoritos, setFavoritos, saveFavorito, checkFavorite }
 }
