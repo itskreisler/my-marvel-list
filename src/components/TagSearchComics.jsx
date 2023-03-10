@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap'
 import { useTypingEffect } from '../hooks/use-typing-effect'
 import { marvelCharactersList } from '../helpers/config'
 
-const TagSearchComics = () => {
+const TagSearchComics = ({ loading }) => {
   const { register, handleSubmit } = useForm()
   const onSubmit = (data) => console.log(data)
   const [text] = useTypingEffect(marvelCharactersList)
@@ -20,8 +21,8 @@ const TagSearchComics = () => {
               required
               {...register('title', { required: true })}
             />
-            <Button type='submit' variant="outline-mml">
-              Buscar
+            <Button disabled={loading} type='submit' variant="outline-mml">
+              {loading ? 'Buscando...' : 'Buscar'}
             </Button>
           </InputGroup>
           </Form>

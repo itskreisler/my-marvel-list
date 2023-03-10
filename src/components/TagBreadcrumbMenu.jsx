@@ -14,12 +14,12 @@ const TagBreadcrumbMenu = () => {
       <Card className="my-3 border-0 shadow-sm">
         <Card.Body>
           <Breadcrumb className="m-0">
-            <Breadcrumb.Item>
+            <Breadcrumb.Item active>
               <Link to={PATHS.URL_DEFAULT.path}>{titleWebSite}</Link>
             </Breadcrumb.Item>
             {breadcrumbId
               ? (
-              <Breadcrumb.Item>
+              <Breadcrumb.Item active>
                 <Link to={PATHS.URL_COMICS.path}>{PATHS.URL_COMICS.title}</Link>
               </Breadcrumb.Item>
                 )
