@@ -12,7 +12,6 @@ const PageComics = () => {
     loading: state.loading,
     error: state.error
   }), shallow)
-
   return (
     <Container className="mt-lg-3">
       <TagSearchComics loading={loading} />
