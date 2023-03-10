@@ -6,11 +6,14 @@ import { useUpdateTitle } from '../hooks/use-update-title'
 import { titleWebSite } from '../helpers/config'
 import { PATHS } from '../pages/Paths'
 import { useRouter } from '../hooks/use-router'
+import { useAppContext } from '../context/AppContext'
 
 const TagMenu = () => {
   const [stateTitle] = useUpdateTitle()
   const { push } = useRouter()
   const handleClickHome = () => push(PATHS.URL_DEFAULT.path)
+  const { accounts: { getActiveProfile } } = useAppContext()
+  const { nombre } = getActiveProfile()
   return (
     <>
       <Navbar bg="" className='shadow-sm' expand="lg" collapseOnSelect={true}>
@@ -28,11 +31,16 @@ const TagMenu = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <TagListMenu />
+              {nombre && (
+                <Nav.Link href={'#' + PATHS.URL_FAVORITES.path}>
+                  <span className="h5 text-decoration-none">{PATHS.URL_FAVORITES.title}</span>
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              Show me by: <strong>{'correo'}</strong>
+              {nombre && (<>Perfil: <strong>{nombre}</strong></>)}
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>

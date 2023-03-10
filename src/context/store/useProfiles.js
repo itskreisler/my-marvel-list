@@ -4,7 +4,13 @@ export const useProfiles = () => {
 
   /** Funcion para guardar el perfil con el nombre, identicacion y correo, se comprueba si ya exite la identenficacion */
   const saveProfile = ({ nombre, identificacion, correoElectronico }) => {
-    if (profiles.find((profile) => profile.identificacion === identificacion.trim())) {
+    if (
+      profiles.find(
+        (profile) =>
+          profile.identificacion === identificacion.trim() ||
+          profile.correoElectronico === correoElectronico.trim()
+      )
+    ) {
       return false
     }
     setProfiles([
@@ -26,5 +32,17 @@ export const useProfiles = () => {
     setProfiles(newProfiles)
   }
 
-  return { profiles, saveProfile, deleteProfile }
+  const activeProfile = (identificacion) => {
+    const newProfiles = profiles.map((profile) => {
+      if (profile.identificacion === identificacion) {
+        return { ...profile, active: !profile.active }
+      }
+      return { ...profile, active: false }
+    })
+    setProfiles(newProfiles)
+  }
+
+  const getActiveProfile = () => profiles.find((profile) => profile.active) || {}
+
+  return { profiles, setProfiles, saveProfile, deleteProfile, activeProfile, getActiveProfile }
 }

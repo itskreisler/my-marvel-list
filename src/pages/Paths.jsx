@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import Home from './home/index'
 import PageComics from './comics/PageComics'
 import PageSingUp from './sign/up/PageSingUp'
+import PageSingIn from './sign/in/PageSingIn'
 const pathTitle = ([path, title, url]) => ({ path, title, url })
 export const PATHS = {
   URL_DEFAULT: pathTitle(['/', 'Inicio']),
@@ -10,7 +11,7 @@ export const PATHS = {
   URL_COMIC_ID: pathTitle(['/comic/:id', 'Comic', '/comic/']),
   URL_FAVORITES: pathTitle(['/favorites', 'Favoritos']),
   URL_SIGN_UP: pathTitle(['/sign-up', 'Registrarse']),
-  URL_SIGN_IN: pathTitle(['/sign-in', 'Ingresar'])
+  URL_SIGN_IN: pathTitle(['/sign-in', 'Perfiles'])
 }
 export const appPages = [
   {
@@ -31,7 +32,7 @@ export const appPages = [
   {
     title: PATHS.URL_SIGN_IN.title,
     url: PATHS.URL_SIGN_IN.path,
-    Component: () => <div>PageSingIn</div>
+    Component: () => <PageSingIn/>
   }
 ]
 

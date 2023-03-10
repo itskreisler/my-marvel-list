@@ -1,5 +1,5 @@
 import md5 from 'md5'
-
+import quotesMarvel from '../assets/quotesmarvel.json'
 /* The base url of the API. */
 const baseUrl = 'https://gateway.marvel.com/v1/public'
 
@@ -29,29 +29,6 @@ export const requestUrlMarvel = (path = '/comics', args = {}) => `${baseUrl}${pa
 
 /* Getting the title of the website from the environment variable. */
 export const titleWebSite = process.env.TITLE_WEBSITE
-
-const quotesMarvel = [
-  { frase: '¡Hulk aplasta!', autor: 'Hulk' },
-  {
-    frase: 'Con grandes poderes vienen grandes responsabilidades.',
-    autor: 'Tío Ben'
-  },
-  { frase: '¡Yo soy Iron Man!', autor: 'Tony Stark' },
-  {
-    frase: '¡Que la Fuerza esté contigo! Ah no, eso es de otra franquicia.',
-    autor: 'Deadpool'
-  },
-  { frase: '¡Soy Groot!', autor: 'Groot' },
-  { frase: '¡Avengers, unidos!', autor: 'Capitán América' },
-  {
-    frase:
-        'No importa cuántas veces caigas, siempre puedes levantarte de nuevo.',
-    autor: 'Mary Jane Watson'
-  },
-  { frase: '¡Mi nombre es Deadpool y amo a Betty White!', autor: 'Deadpool' },
-  { frase: '¡No soy un hámster!', autor: 'Rocket Raccoon' },
-  { frase: '¡Excelsior!', autor: 'Stan Lee' }
-]
 
 /**
  * It returns a random quote from the quotesMarvel array.

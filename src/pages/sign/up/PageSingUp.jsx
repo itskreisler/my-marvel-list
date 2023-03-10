@@ -2,13 +2,12 @@ import React, { useRef } from 'react'
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { randomQuoteMarvel } from '../../../helpers/config'
 import { useAppContext } from '../../../context/AppContext'
 import { toast } from 'react-toastify'
 import { PATHS } from '../../Paths'
+import TagBannerQuote from '../../../components/TagBannerQuote'
 
 const PageSingUp = () => {
-  const { frase, autor } = randomQuoteMarvel()
   const formRegister = useRef(null)
   const { register, handleSubmit } = useForm({ defaultValues: { nombre: 'Kreisler', identificacion: '123', correoElectronico: 'temp@hotmail.com' } })
   const { accounts: { saveProfile } } = useAppContext()
@@ -62,21 +61,7 @@ const PageSingUp = () => {
                 </Card>
               </Col>
               <Col xl={6}>
-                <Card className="bg-dark text-white">
-                  <Card.Img
-                    src="./img/logo.png"
-                    className="card-img-blur"
-                    alt="Card image"
-                  />
-                  <Card.ImgOverlay>
-                    <Card.Title>
-                      <p>{frase}</p>
-                      <span className="blockquote-footer text-white">
-                        <cite title="Source Title">{autor}</cite>
-                      </span>
-                    </Card.Title>
-                  </Card.ImgOverlay>
-                </Card>
+                <TagBannerQuote/>
               </Col>
             </Row>
           </Card>

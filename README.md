@@ -23,12 +23,12 @@ Un sitio web basado en perfiles para ver los comics y/o personajes de MARVEL y q
 
 ## Features
 ✅ SI ❌ No
-- Registro de usuarios (Nombre, identificación y correo electrónico) 
-- Una vez registrado el usuario y “logueado” sobre el sitio debe poder:
-- Ver el listado de los Comics con su respectiva imagen
+- ✅ Registro de usuarios (Nombre, identificación y correo electrónico) 
+- ✅ Una vez registrado el usuario y “logueado” sobre el sitio debe poder:
+- ✅ Ver el listado de los Comics con su respectiva imagen
 - Detalle de cada uno de los Comics, el detalle debe mostrar la imagen y la información del Comic.
-- El usuario debe poder crear una lista personalizada con sus comics favoritos.
-- La información de los usuarios y sus preferencias debe persistir. 
+- ✅ El usuario debe poder crear una lista personalizada con sus comics favoritos.
+- ✅ La información de los usuarios y sus preferencias debe persistir. 
 
 
 ## FAQ

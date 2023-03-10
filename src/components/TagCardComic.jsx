@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Card, Col, Row, InputGroup, Button, Badge } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-const TagCardComic = ({ title, thumbnail, format, prices, description }) => {
+import { Card, Col, Row, Badge } from 'react-bootstrap'
+import TagButtonComic from './TagButtonComic'
+const TagCardComic = ({ title, thumbnail, format, prices, id }) => {
   const { price } = prices.find((price) => price.type === 'printPrice')
+
   return (
     <Card className="shadow-sm vh-lg-100 card-mml">
       <Card.Header className="text-ellipsis" title={title}>
@@ -32,14 +33,7 @@ const TagCardComic = ({ title, thumbnail, format, prices, description }) => {
             Precio:{' '}
             <Badge bg={price > 0 ? 'purple' : 'success'}>{price > 0 ? price : 'free'}</Badge>
             <hr />
-            <InputGroup className="mb-3">
-              <Button size="sm" variant="outline-purple">
-                Guardar <i className="fa-regular fa-heart"></i>
-              </Button>
-              <Link to="/comics" className="btn btn-sm btn-outline-mml">
-                Ver <i className="fa-regular fa-eye"></i>
-              </Link>
-            </InputGroup>
+              <TagButtonComic id={id}/>
           </Col>
         </Row>
       </Card.Body>
