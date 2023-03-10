@@ -8,7 +8,7 @@ const TagFooter = () => {
       <Row className="mt-5">
         <Col>
           <footer className="text-center rounded p-3">
-            Made with ❤️ by{' '}
+            Made with ❤️ by&nbsp;
             <a
               className="text-muted"
               href="https://github.com/itskreisler/my-marvel-list"

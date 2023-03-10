@@ -9,7 +9,7 @@ import TagBannerQuote from '../../../components/TagBannerQuote'
 
 const PageSingUp = () => {
   const formRegister = useRef(null)
-  const { register, handleSubmit } = useForm({ defaultValues: { nombre: 'Kreisler', identificacion: '123', correoElectronico: 'temp@hotmail.com' } })
+  const { register, handleSubmit } = useForm()
   const { accounts: { saveProfile } } = useAppContext()
   const onSubmit = (data) => {
     const ifSaved = saveProfile(data)

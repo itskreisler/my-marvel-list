@@ -30,7 +30,7 @@ const TagCardComic = ({ title, thumbnail, format, prices, id }) => {
               </>
             )}
             </Card.Text>
-            Precio:{' '}
+            Precio:&nbsp;
             <Badge bg={price > 0 ? 'purple' : 'success'}>{price > 0 ? price : 'free'}</Badge>
             <hr />
               <TagButtonGroupComics id={id}/>

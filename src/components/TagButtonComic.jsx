@@ -9,7 +9,7 @@ const TagButtonComic = ({ id }) => {
   const { identificacion } = getActiveProfile()
   const [exiteYlogueado] = checkFavorite(identificacion, Number(id))
   const handleClick = () => {
-    if (typeof identificacion === 'undefined') return toast('No hay perfil activo, registra uno!')
+    if (typeof identificacion === 'undefined') return toast('No hay perfil activo, registra uno, y luego activalo en Menu>Perfiles!')
     saveFavorito(identificacion, Number(id))
   }
   return (

@@ -24,7 +24,7 @@ const PlaceholderCardComic = () => {
           <Col xs={8}>
             <Card.Text as="div">
               <Placeholder as='p' animation="glow">
-                <Placeholder xs={numberMinMax()} /> <Placeholder xs={numberMinMax()} /> <Placeholder xs={numberMinMax()} />{' '}
+                <Placeholder xs={numberMinMax()} /> <Placeholder xs={numberMinMax()} /> <Placeholder xs={numberMinMax()} />&nbsp;
                 <Placeholder xs={numberMinMax()} /> <Placeholder xs={numberMinMax()} />
               </Placeholder>
             </Card.Text>

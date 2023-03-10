@@ -88,7 +88,7 @@ const PageComicId = () => {
                   </strong>
                   {comic.creators?.items.map(({ name, role }, idx) => (
                     <p key={idx}>
-                      <strong className="text-capitalize">{role}:</strong>{' '}
+                      <strong className="text-capitalize">{role}:</strong>&nbsp;
                       {name}
                     </p>
                   ))}

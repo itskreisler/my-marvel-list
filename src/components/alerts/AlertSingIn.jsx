@@ -13,8 +13,8 @@ const AlertSingIn = () => {
     <>
       <hr />
       <p className="mb-0">
-        Parece que no hay perfiles, empieza{' '}
-        <Link to={PATHS.URL_SIGN_UP.path}>registrando</Link>{' '}
+        Parece que no hay perfiles, empieza&nbsp;
+        <Link to={PATHS.URL_SIGN_UP.path}>registrando</Link>&nbsp;
         uno.
       </p>
     </>

@@ -29,7 +29,7 @@ const PageFavoritos = () => {
             )
           : (
           <Alert variant="purple">
-            No hay favoritos en este perfil,{' '}
+            No hay favoritos en este perfil,&nbsp;
             <Link to={PATHS.URL_SIGN_UP.path}>registra</Link> un <Link to={PATHS.URL_SIGN_IN.path}>perfil</Link> luego activalo, <Link to={PATHS.URL_COMICS.path}>busca
             un comic</Link> y guarda uno de tu preferencia.
           </Alert>
