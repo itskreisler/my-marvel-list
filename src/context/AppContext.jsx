@@ -18,7 +18,8 @@ const AppContext = createContext({
     favoritos: [],
     setFavoritos: () => {},
     saveFavorito: () => {},
-    checkFavorite: () => {}
+    checkFavorite: () => {},
+    deletePerfilFavoritos: () => {}
   },
   cache: {
     cache: [],

@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-import { stateApiMarvel } from '../../services/marvel.api'
 import { requestUrlMarvel } from '../../helpers/config'
 import { toast } from 'react-toastify'
 import { persist, createJSONStorage } from 'zustand/middleware'
@@ -23,12 +22,6 @@ export const useComicsStore = create((set, get) => ({
     } finally {
       set({ loading: false })
     }
-  },
-  fetchComics: () => {
-    const [responde, loading, error] = stateApiMarvel(
-      requestUrlMarvel('/comics', { titleStartsWith: get().query })
-    )
-    set({ comics: responde, loading, error })
   },
   deleteEverything: () => set({}, true)
 }))

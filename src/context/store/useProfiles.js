@@ -1,6 +1,7 @@
 import { useLocalStorage } from '@/hooks/use-local-storage'
 export const useProfiles = () => {
   const [profiles, setProfiles] = useLocalStorage('marvel:profiles', [])
+  const [favoritos, setFavoritos] = useLocalStorage('marvel:favoritos', [])
 
   /** Funcion para guardar el perfil con el nombre, identicacion y correo, se comprueba si ya exite la identenficacion */
   const saveProfile = ({ nombre, identificacion, correoElectronico }) => {
@@ -29,6 +30,10 @@ export const useProfiles = () => {
     const newProfiles = profiles.filter(
       (profile) => profile.identificacion !== identificacion
     )
+    const newFavoritos = favoritos.filter(
+      (favorito) => favorito.perfil !== identificacion
+    )
+    setFavoritos(newFavoritos)
     setProfiles(newProfiles)
   }
 

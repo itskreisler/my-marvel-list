@@ -4,9 +4,38 @@ import { useAppContext } from '../context/AppContext'
 
 const TagTableAccounts = () => {
   const {
-    accounts: { profiles, activeProfile }
+    accounts: { profiles, activeProfile, deleteProfile }
   } = useAppContext()
   const handleCLick = (id) => activeProfile(id)
+  const handleCLickDelete = (id) => {
+    if (typeof Swal !== 'undefined') {
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      swalWithBootstrapButtons.fire({
+        title: '¿Está seguro?',
+        text: '¡No podrás revertir esto!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: '¡Sí, borrarlo!',
+        cancelButtonText: '¡No, Cancelar!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            '¡Eliminado!',
+            'Su perfil ha sido eliminado.',
+            'success'
+          )
+          deleteProfile(id)
+        }
+      })
+    }
+  }
   if (profiles.length === 0) return <h3>No hay perfiles</h3>
   return (
     <Table bordered responsive size="sm">
@@ -33,6 +62,13 @@ const TagTableAccounts = () => {
                   onClick={() => handleCLick(identificacion)}
                 >
                   {active ? 'Desactivar' : 'Activar'}
+                </Button>
+                <Button
+
+                  variant='outline-mml'
+                  onClick={() => handleCLickDelete(identificacion)}
+                >
+                  Eliminar
                 </Button>
                 </ButtonGroup>
               </td>
